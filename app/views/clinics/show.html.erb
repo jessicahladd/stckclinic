@@ -43,9 +43,9 @@
 <p>Created at: <%= @clinic.created_at %></p>
 
 <%= link_to "edit", edit_clinic_path(@clinic), class: "btn" %>
-<br/>
 
 <%= link_to "delete",  clinic_path(@clinic), class: "btn", method: :delete, confirm: 'Are you sure?' %>
-<br/>
 
 <%= link_to "<< Back to Clinic List", admin_path %>
+
+<hr class="featurette-divider">

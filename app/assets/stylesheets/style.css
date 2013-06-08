@@ -88,7 +88,7 @@
     .carousel img {
       position: absolute;
       top: 40px;
-      right: 150px;
+      right: 100px;
       width: 360px;
       height: auto;
     }
@@ -149,17 +149,17 @@
     .marketing h3, .marketing h4 {
       font-weight: normal;
     }
-    .marketing h3, #how h3 {
+    .marketing h3, #how h3, .thank_you h3 {
       line-height: 1.05;
     }
     .marketing h4 {
       padding-bottom: 20px;
     }
-    #how .span2 {
-      padding-top: 0px;
+    .thank_you .span2 {
+      padding-top: 10px;
       padding-bottom: 60px;
     }
-    #how .span2 i{
+    .thank_you .span2 i{
       color:#009ac9;
     }
     #how .span3 {
@@ -173,6 +173,15 @@
       text-align: center;
       margin-left: 0px;
       padding-top: 60px;
+    }
+    /*.second-row-top {
+      margin-left: 0px;
+      margin-right: 20px;
+    }*/
+    .second-row .span_3 {
+      float: right;
+      margin-left: 0px;
+      margin-right: 20px;
     }
     .rotate-arrow {
       margin-top: 100px;
@@ -219,6 +228,11 @@
       background: #3333333;
     }
 
+    .footer-divider {
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+
     /* RESPONSIVE CSS
     -------------------------------------------------- */
 
@@ -239,9 +253,13 @@
       .carousel .item {
         height: 500px;
       }
+      .carousel-caption {
+        max-width: 400px;
+      }
       .carousel img {
-        width: auto;
-        height: 180px;
+        position: absolute;
+        top: 40px;
+        right: 0px;
       }
 
       .marketing .row .span3 {
@@ -257,7 +275,11 @@
       }
 
       .arrow { height: 40px; width: auto;}
-
+      .second-row {
+      float: left;
+      margin-left: 0px;
+      margin-right: 0px;
+      }
       .rotate-arrow {
         margin-top: 0px;
         transform:rotate(180deg);
@@ -294,9 +316,12 @@
       .carousel .item {
         height: 400px;
       }
+      .carousel-caption {
+        max-width: 500px;
+      }
+
       .carousel img {
-        top: 220px;
-        right: 20px;
+        visibility: hidden;
       }
 
       .carousel img#hopkins {
