@@ -1,0 +1,152 @@
+
+ 
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide container">
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= image_tag("contact_provider.jpg", :alt => "STCK logo") %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>STCK Clinic</h1>
+              <p class="lead">Let's work together to find out if <a href="https://www.sotheycanknow.org" target="_blank">So They Can Know</a> works for your patients.</p>
+              <%= link_to "Sign Up", new_clinic_path, class: 'btn btn-large btn-primary'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.carousel --> 
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container marketing">
+      <div id="how">
+      <br/>
+      <h2 class="featurette-heading">How it works.</h2>
+      <p class="lead">You fill out a form, we send you material for a year.</p>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span3">
+          <div class="icon_div img-rounded">
+            <i class="icon-list-alt icon-5x"></i> 
+          </div>
+          <h3>You sign up</h3>
+          <p>Using <%= link_to "this", new_clinic_path %> form.</p>
+        </div><!-- /.span4 -->
+        <div class="span1_5">
+          <%= image_tag("medium_right_arrow_4.png", :class => "arrow", :alt => "arrow") %>
+        </div>
+        <div class="span3">
+          <div class="icon_div img-rounded">
+            <i class="icon-phone icon-5x"></i> 
+          </div>
+          <h3>We call you</h3>
+          <p>To confirm everything, and make sure that we're sending you the right material.</p>
+        </div><!-- /.span4 -->
+        <div class="span1_5">
+            <%= image_tag("medium_right_arrow_3.png", :class => "arrow", :alt => "arrow") %>
+        </div>
+        <div class="span3">
+          <div class="icon_div img-rounded">
+            <i class="icon-user icon-5x"></i> 
+          </div>
+          <h3>You create an account</h3>
+          <p>We'll send you a link, a username, and a temporary password.</p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row --> 
+      <div class="row">
+        <div class="span3 pull-right">
+          <%= image_tag("down_arrow_2.png", :class => "arrow", :alt => "arrow") %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3">
+          <div class="icon_div img-rounded">
+            <i class="icon-heart icon-5x"></i> 
+          </div>
+          <h3>You give it to patients</h3>
+          <p>And they notify their partners.</p>
+          
+        </div><!-- /.span4 -->
+        <div class="span1_5 rotate-arrow">
+          <%= image_tag("medium_right_arrow_3.png", :class => "arrow", :alt => "arrow") %>
+        </div>
+        <div class="span3">
+          <div class="icon_div img-rounded">
+            <i class="icon-envelope icon-5x"></i> 
+          </div>
+          <h3>We mail it to you</h3>
+          <p>For free.</p>
+        </div><!-- /.span4 -->
+        <div class="span1_5 rotate-arrow">
+          <%= image_tag("medium_right_arrow_4.png", :class => "arrow", :alt => "arrow") %>
+        </div>
+        <div class="span3">
+          <div class="icon_div img-rounded">
+            <i class="icon-list icon-5x"></i> 
+          </div>
+          <h3>You order material</h3>
+          <p>And you can re-order if you're running low, too.</p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+      </div><!-- /#how -->
+      
+      <div id="about">
+
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+          <h2 class="featurette-heading">About us. <span class="muted">We're Sexual Health Innovations.</span></h2>
+          <p class="lead"><a href="http://www.sexualhealthinnovations.org" target="_blank">Sexual Health Innovations</a> is a non-profit organization dedicated to using the power of technology to improve sexual health and well-being in the United States. We created <a href="https://www.sotheycanknow.org" target="_blank">So They Can Know</a> in an attempt to increase rates of STD partner notification, and we created this website to help us evaluate whether or not So They Can Know works.</p>
+
+          <div class="row" id="team">
+            <div class="span4">
+              <img class="img-rounded" data-src="holder.js/140x140">
+              <h3>Jess Ladd</h3>
+              <p>Executive Director</p>
+              <button class="btn" id="jess_btn">More about Jess</button>
+              <div id="jess" class="more_about" style="display: none;">
+                Jess dedicated her life to sexual health at age 17. Since then, she's taught sex education, advocated for sexual health on the Hill, worked in the White House Office of National HIV AIDS Policy, received her Masters in Public Health from Johns Hopkins, and founded The Social Innovation Lab and Sexual Health Innovations. She's spoken at multiple TEDx events, and was named a "Fearless Changemaker" by the Case Foundation.
+              </div>
+            </div>
+            <div class="span4">
+              <img class="img-rounded" data-src="holder.js/140x140">
+              <h3>Jenny McManus</h3>
+              <p>Director of Operations</p>
+              <button class="btn">More about Jenny</button>
+              <div id="jenny" class="more_about" style="display: none;">
+                Jenny is awesome.
+              </div>
+            </div>
+            <div class="span4">
+              <img class="img-rounded" data-src="holder.js/140x140">
+              <h3>Charlotte Gaydos</h3>
+              <p>Chair of the Board</p>
+              <button class="btn">More about Charlotte</button>
+              <div id="charlotte" class="more_about" style="display: none;">
+                Charlotte is awesome.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+          <h2 class="featurette-heading">Will your patients use it? <span class="muted">Let's find out.</span></h2>
+          <p class="lead">We don't know whether or not So They Can Know will work for every patient population. Evaluations of similar services have shown mixed results. But hey, it's probably better than nothing, and we won't know unless we try.</p><br/><br/>
+          <center>
+            <a href="clinics/new" class="btn btn-large btn-primary"><i class="icon-list-alt"></i>  Sign Up</a> 
+          </center>
+        </div>
+
+      </div>
+
+      
+
+
+

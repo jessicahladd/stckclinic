@@ -1,0 +1,15 @@
+<div class="container below-header">
+	<br/>
+      <h2 class="featurette-heading">All clinics</h2>
+      <div class="featurette">
+          <h3>All Clinics</h3>
+          <ul id="clinics">
+            <% @clinics.each do |clinic| %>
+              <li>
+                <%= link_to clinic.clinic_name, clinic_path(clinic), class: ''%>
+              </li>
+            <% end %>
+          </ul>
+          <%= link_to "Add a Clinic", new_admin_path, class: 'btn'%>
+        </div>
+        

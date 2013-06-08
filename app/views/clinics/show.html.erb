@@ -1,0 +1,51 @@
+
+
+<div class="container below-header">
+<p class="flash"><%= flash.notice %></p>
+<h1><%= @clinic.clinic_name %></h1>
+
+<h3>Clinic Info</h3>
+<p><%= @clinic.address_line_1 %></p>
+<p><%= @clinic.address_line_2 %></p>
+<p><%= @clinic.city %></p>
+<p><%= @clinic.state %></p>
+<p><%= @clinic.zip_code %></p>
+<p>Clinic type: <%= @clinic.clinic_type %></p>
+<p>Percent women: <%= @clinic.perc_women %></p>
+<p>Percent MSM: <%= @clinic.perc_msm %></p>
+<p>Percent under 26: <%= @clinic.perc_under_26 %></p>
+<p>Percent black/African-American: <%= @clinic.perc_black %></p>
+<p>Percent hispanic/Latino(a): <%= @clinic.perc_hispanic %></p>
+
+
+<h3>Contact Info</h3>
+<p>Name: <%= @clinic.contact_name %></p>
+<p>Email: <%= @clinic.contact_email %></p>
+<p>Phone: <%= @clinic.contact_phone %></p>
+
+<h3>Clinic Epi</h3>
+<p>Num tested for chlamydia: <%= @clinic.test_ct %></p>
+<p>Num diagnosed with chlamydia: <%= @clinic.diag_ct %></p>
+<p>Num tested for gonorrhea: <%= @clinic.test_gc %></p>
+<p>Num diagnosed with gonorrhea: <%= @clinic.diag_gc %></p>
+<p>Num tested for trich: <%= @clinic.test_trich %></p>
+<p>Num diagnosed with trich: <%= @clinic.diag_trich %></p>
+<p>Num tested for HIV: <%= @clinic.test_hiv %></p>
+<p>Num diagnosed with HIV: <%= @clinic.diag_hiv %></p>
+
+<h3>Clinic Services</h3>
+<p>How charge for a chlamydia test: <%= @clinic.charge_ct %></p>
+<p>How deliver chlamydia test results: <%= @clinic.deliver_ct_results %></p>
+<p>Notify patients when a test result is ready? <%= @clinic.notify_test_ready %></p>
+<p>Ask patients routinely about whether or not they've come in due to a partner notification? <%= @clinic.ask_pn %></p>
+
+<h3>Other Info</h3>
+<p>Created at: <%= @clinic.created_at %></p>
+
+<%= link_to "edit", edit_clinic_path(@clinic), class: "btn" %>
+<br/>
+
+<%= link_to "delete",  clinic_path(@clinic), class: "btn", method: :delete, confirm: 'Are you sure?' %>
+<br/>
+
+<%= link_to "<< Back to Clinic List", admin_path %>
