@@ -287,6 +287,24 @@
               </div>
             </div>
 
+            <div class="status">
+              <%= label_tag(:clinic_status, "Clinic status", class: "control-label") %>  
+              <div class="controls">            
+                <select class="span4" name="clinic_status" id="clinic_status">
+                  <option value="Needs to be called">Needs to be called</option>
+                  <option value="Called">Called</option>
+                  <option value="Has an account they can log into">Has an account they can log into</option>
+                  <option value="Has been sent log in info">Has been sent log in info</option>
+                  <option value="Has logged in">Has logged in</option>
+                </select>
+              </div>
+            </div>
+
+            <!--<p>
+              <%= f.label :tag_list %><br/>
+              <%= f.text_field :tag_list %>
+            </p>-->
+
             <div class="form-actions">
               <button name="commit" type="submit" class="btn btn-primary btn-large">Submit</button>
             </div>

@@ -4,6 +4,8 @@ class ClinicsController < ApplicationController
 	end
 	def show
 		@clinic = Clinic.find(params[:id])
+		@comment = Comment.new
+		@comment.clinic_id = @clinic.id
 	end
 	def new
 		@clinic = Clinic.new

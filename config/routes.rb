@@ -1,7 +1,9 @@
 Stckclinic::Application.routes.draw do
   root :to => 'clinics#index'
 
-  resources :clinics
+  resources :clinics do
+    resources :comments
+  end
 
   match "thank_you" => 'clinics#thank_you'
   match "admin" => 'clinics#admin'
