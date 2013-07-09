@@ -26,6 +26,7 @@ class CreateClinics < ActiveRecord::Migration
     	t.string :test_hiv
     	t.string :diag_hiv
     	t.string :charge_ct
+        t.string :deliver_results_online
     	t.string :deliver_ct_results
     	t.string :notify_test_ready
     	t.string :ask_pn

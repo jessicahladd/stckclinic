@@ -1,4 +1,4 @@
-<%= form_for(@clinic) do |f| %>
+
           	<ul>
           		<% @clinic.errors.full_messages.each do |error| %>
           		<li><%= error %></li>
@@ -22,7 +22,7 @@
               </div>
               <div class="controls controls-row">
               	<%= f.text_field :city, class: "span3", placeholder: "City" %>
-                <select class="span1" name="state" id="state">
+                <select class="span1" name="clinic[state]" id="clinic_state">
                   <option value="...">...</option>
                   <option value="AK">AK</option>
                   <option value="AL">AL</option>
@@ -112,25 +112,25 @@
               <%= label_tag(:clinic_type, "Clinic type", class: "control-label") %>
               <div class="controls">
                 <label class="checkbox">
-                  <input type="checkbox" name="clinic_type" id="clinic_type" value="1">College Health Center
+                  <input type="checkbox" name="clinic[clinic_type_college]" id="clinic_clinic_type_college" value="College Health Center">College Health Center
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="clinic_type_2" id="clinic_type_2" value="1">Community Health Center
+                  <input type="checkbox" name="clinic[clinic_type_community]" id="clinic_clinic_type_community" value="Community Health Center">Community Health Center
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="clinic_type_3" id="clinic_type_3" value="1">Family Planning Clinic
+                  <input type="checkbox" name="clinic[clinic_type_fp]" id="clinic_clinic_type_fp" value="Family Planning Clinic">Family Planning Clinic
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="1">Planned Parenthood Health Center
+                  <input type="checkbox" name="clinic[clinic_type_pp]" id="clinic_clinic_type_pp" value="Planned Parenthood Health Center">Planned Parenthood Health Center
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="1">Private Practice
+                  <input type="checkbox" name="clinic[clinic_type_private]" id="clinic_clinic_type_private" value="Private Practice">Private Practice
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="1">STD Clinic
+                  <input type="checkbox" name="clinic[clinic_type_std]" id="clinic_clinic_type_std" value="STD Clinic">STD Clinic
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="1">Other
+                  <input type="checkbox" name="clinic[clinic_type_other]" id="clinic_clinic_type_other" value="Other">Other
                 </label>
               </div>
             </div>
@@ -231,7 +231,7 @@
             <div class="control-group">
               <%= label_tag(:charge_ct, "How much does your clinic charge for a chlamydia test?", class: "control-label") %>  
               <div class="controls">            
-                <select class="span4" name="charge_ct" id="charge_ct">
+                <select class="span4" name="clinic[charge_ct]" id="clinic_charge_ct">
                   <option value="Missing">Please select</option>
                   <option value="Free">Free</option>
                   <option value="Depends on the insurance">Depends on the insurance</option>
@@ -245,19 +245,19 @@
               <%= label_tag(:deliver_ct_results, "How do you deliver chlamydia test results?", class: "control-label") %>
               <div class="controls">
                 <label class="checkbox">
-                  <input type="checkbox" name="deliver_ct_results" id="deliver_ct_results" value="1">Online
+                  <input type="checkbox" name="clinic[deliver_results_online]" id="clinic_deliver_results_online" value="Online">Online
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="deliver_ct_results_in_person" value="In person">In person
+                  <input type="checkbox" name="clinic[deliver_results_in_person]" id="clinic_deliver_results_in_person" value="In person">In person
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="On the phone (with a human being answering/calling">On the phone (with a human being answering/calling)
+                  <input type="checkbox" name="clinic[deliver_results_on_phone_human]" id="clinic_deliver_results_on_phone_human" value="On the phone (with a human being answering/calling)">On the phone (with a human being answering/calling)
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="On the phone (with an automated voice delivering the result)">On the phone (with an automated voice delivering the result)
+                  <input type="checkbox" name="clinic[deliver_results_on_phone_automated]" id="clinic_deliver_results_on_phone_automated" value="On the phone (with an automated voice delivering the result)">On the phone (with an automated voice delivering the result)
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="" id="" value="1">Other
+                  <input type="checkbox" name="clinic[deliver_results_other]" id="clinic_deliver_results_other" value="Other">Other
                 </label>
               </div>
             </div>
@@ -265,12 +265,12 @@
             <div class="control-group">
               <%= label_tag(:notify_test_ready, "Do you notify patients when their test results are ready?", class: "control-label") %>  
               <div class="controls">            
-                <select class="span4" name="notify_test_ready" id="notify_test_ready">
-                  <option value="0">Please select</option>
-                  <option value="no">No</option>
-                  <option value="positives_only">Yes, for people who are positive</option>
-                  <option value="all">Yes, for all patients</option>
-                  <option value="other">Other</option>
+                <select class="span4" name="clinic[notify_test_ready]" id="clinic_notify_test_ready">
+                  <option value="Missing">Please select</option>
+                  <option value="No">No</option>
+                  <option value="Yes, for people who are positive">Yes, for people who are positive</option>
+                  <option value="Yes, for all patients">Yes, for all patients</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>
@@ -279,10 +279,10 @@
               <%= label_tag(:ask_pn, "Do you routinely ask clients if they are getting tested because of a partner notification?", class: "control-label") %>
               <div class="controls">
                 <label class="radio">
-                  <input type="radio" name="ask_pn" id="ask_pn" value="0">No
+                  <input type="radio" name="clinic[ask_pn]" id="clinic_ask_pn_no" value="No">No
                 </label>
                 <label class="radio">
-                  <input type="radio" name="ask_pn" id="ask_pn" value="1">Yes
+                  <input type="radio" name="clinic[ask_pn]" id="clinic_ask_pn_yes" value="Yes">Yes
                 </label>
               </div>
             </div>
@@ -290,7 +290,7 @@
             <div class="status">
               <%= label_tag(:clinic_status, "Clinic status", class: "control-label") %>  
               <div class="controls">            
-                <select class="span4" name="clinic_status" id="clinic_status">
+                <select class="span4" name="clinic[clinic_status]" id="clinic_clinic_status">
                   <option value="Needs to be called">Needs to be called</option>
                   <option value="Called">Called</option>
                   <option value="Has an account they can log into">Has an account they can log into</option>
@@ -300,13 +300,4 @@
               </div>
             </div>
 
-            <!--<p>
-              <%= f.label :tag_list %><br/>
-              <%= f.text_field :tag_list %>
-            </p>-->
-
-            <div class="form-actions">
-              <button name="commit" type="submit" class="btn btn-primary btn-large">Submit</button>
-            </div>
-
-          <% end %>
+            

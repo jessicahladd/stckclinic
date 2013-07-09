@@ -7,8 +7,301 @@
           <p class="lead">Fill out this form to get free educational material about So They Can Know to give to your patients.</p>
 
           <div class="form-horizontal" id="order_form">
+          	<%= form_for(@clinic) do |f| %>
+          		<ul>
+          		<% @clinic.errors.full_messages.each do |error| %>
+          		<li><%= error %></li>
+          		<% end %>
+          	</ul>
+            <h3>Clinic Info</h3>
+            <div class="control-group">
+              <%= label_tag(:clinic_name, "Clinic name", class: "control-label") %>
+              <div class="controls">
+                <%=f.text_field :clinic_name, class: "span6", placeholder:"Clinic name" %>
+              </div>
+            </div>
 
-          <%= render partial: 'form' %>
+            <div class="control-group">
+              <%= label_tag(:address_line_1, "Mailing address", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :address_line_1, class: "span6", placeholder: "Address Line 1" %>
+              </div>
+              <div class="controls">
+                <%= f.text_field :address_line_2, class: "span6", placeholder: "Address Line 2" %>
+              </div>
+              <div class="controls controls-row">
+              	<%= f.text_field :city, class: "span3", placeholder: "City" %>
+                <select class="span1" name="clinic[state]" id="clinic_state">
+                  <option value="...">...</option>
+                  <option value="AK">AK</option>
+                  <option value="AL">AL</option>
+                  <option value="AR">AR</option>
+                  <option value="AZ">AZ</option>
+                  <option value="CA">CA</option>
+                  <option value="CO">CO</option>
+                  <option value="CT">CT</option>
+                  <option value="DC">DC</option>
+                  <option value="DE">DE</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="HI">HI</option>
+                  <option value="IA">IA</option>
+                  <option value="ID">ID</option>
+                  <option value="IL">IL</option>
+                  <option value="IN">IN</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="LA">LA</option>
+                  <option value="MA">MA</option>
+                  <option value="MD">MD</option>
+                  <option value="ME">ME</option>
+                  <option value="MI">MI</option>
+                  <option value="MN">MN</option>
+                  <option value="MO">MO</option>
+                  <option value="MS">MS</option>
+                  <option value="MT">MT</option>
+                  <option value="NC">NC</option>
+                  <option value="ND">ND</option>
+                  <option value="NE">NE</option>
+                  <option value="NH">NH</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NM">NM</option>
+                  <option value="NV">NV</option>
+                  <option value="NY">NY</option>
+                  <option value="OH">OH</option>
+                  <option value="OK">OK</option>
+                  <option value="OR">OR</option>
+                  <option value="PA">PA</option>
+                  <option value="RI">RI</option>
+                  <option value="SC">SC</option>
+                  <option value="SD">SD</option>
+                  <option value="TN">TN</option>
+                  <option value="TX">TX</option>
+                  <option value="UT">UT</option>
+                  <option value="VA">VA</option>
+                  <option value="VT">VT</option>
+                  <option value="WA">WA</option>
+                  <option value="WI">WI</option>
+                  <option value="WV">WV</option>
+                  <option value="WY">WY</option>
+                </select>
+                <%= f.text_field :zip_code, class: "span2", placeholder: "Zip Code" %>
+              </div>
+            </div>
+
+            <h3>Contact Info</h3>
+            <div class="control-group">
+              <%= label_tag(:contact_name, "Main contact name", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :contact_name, class: "span6", placeholder: "Firstname Lastname" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:contact_title, "Title", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :contact_title, class: "span6", placeholder: "Title" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:contact_email, "Main contact email", class: "control-label") %>
+              <div class="controls">
+                <%= f.email_field :contact_email, class: "span6", placeholder: "Email Address" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:contact_phone, "Phone number", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :contact_phone, class: "span6", placeholder: "XXX-XXX-XXXX" %>
+              </div>
+            </div>
+
+            <h3>Contact Population Characteristics</h3>
+            <span class="help-block">We use this to help us figure out if So They Can Know is working better in some clinic populations than others.</span><br/>
+            <div class="control-group">
+              <%= label_tag(:clinic_type, "Clinic type", class: "control-label") %>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_college]" id="clinic_clinic_type_college" value="College Health Center">College Health Center
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_community]" id="clinic_clinic_type_community" value="Community Health Center">Community Health Center
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_fp]" id="clinic_clinic_type_fp" value="Family Planning Clinic">Family Planning Clinic
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_pp]" id="clinic_clinic_type_pp" value="Planned Parenthood Health Center">Planned Parenthood Health Center
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_private]" id="clinic_clinic_type_private" value="Private Practice">Private Practice
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_std]" id="clinic_clinic_type_std" value="STD Clinic">STD Clinic
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[clinic_type_other]" id="clinic_clinic_type_other" value="Other">Other
+                </label>
+              </div>
+            </div>
+            <h5>What percent of your patients are...</h5>
+            <div class="control-group">
+              <%= label_tag(:perc_women, "Women", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :perc_women, class: "span2", placeholder: "XX.X%" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:perc_msm, "Men who have sex with men (MSM)", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :perc_msm, class: "span2", placeholder: "XX.X%" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:perc_under_26, "Under age 26", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :perc_under_26, class: "span2", placeholder: "XX.X%" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:perc_black, "Black/African American", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :perc_black, class: "span2", placeholder: "XX.X%" %>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:perc_hispanic, "Hispanic/Latino(a)", class: "control-label") %>
+              <div class="controls">
+                <%= f.text_field :perc_hispanic, class: "span2", placeholder: "XX.X%" %>
+              </div>
+            </div>
+
+            <h3>Clinic Testing and Diagnoses</h3>
+            <span class="help-block">We use this to estimate the volume of material to send you.</span><br/>
+            <div class="span12">
+            <div class="span6">
+              <h5>How many people did you <i>test</i> last year for...</h5>
+              <div class="control-group">
+                <%= label_tag(:test_ct, "Chlamydia", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :test_ct, class: "span2", placeholder: "XX" %>
+               </div>
+              </div>
+              <div class="control-group">
+                <%= label_tag(:test_gc, "Gonorrhea", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :test_gc, class: "span2", placeholder: "XX" %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= label_tag(:test_trich, "Trichomoniasis", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :test_trich, class: "span2", placeholder: "XX" %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= label_tag(:test_hiv, "HIV", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :test_hiv, class: "span2", placeholder: "XX" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="span5">
+              <h5>How many people did you <i>diagnose</i> last year with...</h5>
+              <div class="control-group">
+                <%= label_tag(:diag_ct, "Chlamydia", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :diag_ct, class: "span2", placeholder: "XX" %>
+               </div>
+              </div>
+              <div class="control-group">
+                <%= label_tag(:diag_gc, "Gonorrhea", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :diag_gc, class: "span2", placeholder: "XX" %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= label_tag(:diag_trich, "Trichomoniasis", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :diag_trich, class: "span2", placeholder: "XX" %>
+                </div>
+              </div>
+              <div class="control-group">
+                <%= label_tag(:diag_hiv, "HIV", class: "control-label") %>
+                <div class="controls">
+                  <%= f.text_field :diag_hiv, class: "span2", placeholder: "XX" %>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <h3>Clinic Services</h3>
+            <span class="help-block">So we can figure out how So They Can Know can best integrate into your clinic flow.</span><br/>
+            <div class="control-group">
+              <%= label_tag(:charge_ct, "How much does your clinic charge for a chlamydia test?", class: "control-label") %>  
+              <div class="controls">            
+                <select class="span4" name="clinic[charge_ct]" id="clinic_charge_ct">
+                  <option value="Missing">Please select</option>
+                  <option value="Free">Free</option>
+                  <option value="Depends on the insurance">Depends on the insurance</option>
+                  <option value="Sliding scale">Sliding scale</option>
+                  <option value="Flat fee">Flat fee</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <%= label_tag(:deliver_ct_results, "How do you deliver chlamydia test results?", class: "control-label") %>
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[deliver_results_online]" id="clinic_deliver_results_online" value="Online">Online
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[deliver_results_in_person]" id="clinic_deliver_results_in_person" value="In person">In person
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[deliver_results_on_phone_human]" id="clinic_deliver_results_on_phone_human" value="On the phone (with a human being answering/calling)">On the phone (with a human being answering/calling)
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[deliver_results_on_phone_automated]" id="clinic_deliver_results_on_phone_automated" value="On the phone (with an automated voice delivering the result)">On the phone (with an automated voice delivering the result)
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="clinic[deliver_results_other]" id="clinic_deliver_results_other" value="Other">Other
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= label_tag(:notify_test_ready, "Do you notify patients when their test results are ready?", class: "control-label") %>  
+              <div class="controls">            
+                <select class="span4" name="clinic[notify_test_ready]" id="clinic_notify_test_ready">
+                  <option value="Missing">Please select</option>
+                  <option value="No">No</option>
+                  <option value="Yes, for people who are positive">Yes, for people who are positive</option>
+                  <option value="Yes, for all patients">Yes, for all patients</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <%= label_tag(:ask_pn, "Do you routinely ask clients if they are getting tested because of a partner notification?", class: "control-label") %>
+              <div class="controls">
+                <label class="radio">
+                  <input type="radio" name="clinic[ask_pn]" id="clinic_ask_pn_no" value="No">No
+                </label>
+                <label class="radio">
+                  <input type="radio" name="clinic[ask_pn]" id="clinic_ask_pn_yes" value="Yes">Yes
+                </label>
+              </div>
+            </div>
+          			
+          	<div class="form-actions">
+            <%= submit_tag("Submit", class:"btn btn-primary btn-large") %>
+           	</div>
+            
+
+          	<% end %>
       		</div>
         </div>
 </div>

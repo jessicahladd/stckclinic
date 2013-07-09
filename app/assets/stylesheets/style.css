@@ -171,18 +171,19 @@
     }
     .marketing .span1_5 {
       text-align: center;
-      margin-left: 0px;
+      margin-left: 10px;
       padding-top: 60px;
     }
     /*.second-row-top {
       margin-left: 0px;
       margin-right: 20px;
     }*/
-    .second-row .span_3 {
+    .second-row-top .span3,
+    .second-row-top .span1_5 {
       float: right;
-      margin-left: 0px;
-      margin-right: 20px;
     }
+
+
     .rotate-arrow {
       margin-top: 100px;
       transform:rotate(180deg);
@@ -265,8 +266,9 @@
       .marketing .row .span3 {
         width: 100%;
       }
-      .marketing .span1_5 {
-        padding: 20px 0px 0px 0px;
+      .row .span1_5 {
+        padding: 0px 0px 0px 0px;
+        margin: 0px 20px 0px 0px;
         height: 100px;
         width: 100%;
         transform:rotate(90deg);
@@ -274,12 +276,16 @@
         -webkit-transform:rotate(90deg); /* Safari and Chrome */
       }
 
-      .arrow { height: 40px; width: auto;}
-      .second-row {
-      float: left;
-      margin-left: 0px;
-      margin-right: 0px;
+      .arrow { height: 40px; width: auto; margin-left: 0px; margin-top: 30px;}
+
+      .row .span3,
+      .second-row-top .span3,
+      .second-row-top .span1_5 {
+        margin-left: 0px;
+        margin-right: 0px;
       }
+
+
       .rotate-arrow {
         margin-top: 0px;
         transform:rotate(180deg);

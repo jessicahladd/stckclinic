@@ -10,7 +10,7 @@
 <p><%= @clinic.city %></p>
 <p><%= @clinic.state %></p>
 <p><%= @clinic.zip_code %></p>
-<p>Clinic type: <%= @clinic.clinic_type %></p>
+<p>Clinic type: <%= @clinic.clinic_type_college %>, <%= @clinic.clinic_type_community %>, <%= @clinic.clinic_type_fp %>, <%= @clinic.clinic_type_pp %>, <%= @clinic.clinic_type_private %>, <%= @clinic.clinic_type_std %>, <%= @clinic.clinic_type_other %> </p>
 <p>Percent women: <%= @clinic.perc_women %></p>
 <p>Percent MSM: <%= @clinic.perc_msm %></p>
 <p>Percent under 26: <%= @clinic.perc_under_26 %></p>
@@ -35,7 +35,7 @@
 
 <h3>Clinic Services</h3>
 <p>How charge for a chlamydia test: <%= @clinic.charge_ct %></p>
-<p>How deliver chlamydia test results: <%= @clinic.deliver_ct_results %></p>
+<p>How deliver chlamydia test results: <%= @clinic.deliver_results_online %>, <%= @clinic.deliver_results_in_person %>, <%= @clinic.deliver_results_on_phone_human %>, <%= @clinic.deliver_results_on_phone_automated %>, <%= @clinic.deliver_results_other %></p>
 <p>Notify patients when a test result is ready? <%= @clinic.notify_test_ready %></p>
 <p>Ask patients routinely about whether or not they've come in due to a partner notification? <%= @clinic.ask_pn %></p>
 
