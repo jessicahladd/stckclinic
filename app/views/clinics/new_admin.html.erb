@@ -309,10 +309,17 @@
               </div>
             </div>
 
-            <p>
-              <%= f.label :tag_list %><br/>
-              <%= f.text_field :tag_list %>
-            </p>  
+            <div class="control-group">
+              <%= label_tag(:tag_list, "Status", class: "control-label") %>
+              <div class="controls"> 
+                <select class="span4" name="clinic[tag_list]" id="clinic_tag_list">
+                  <% Tag.all.each do |tag| %>
+                    <option value="<%= tag.name %>"><%= tag.name %></option>
+                  <% end %>
+                </select>
+              </div>
+              <!--<%= f.text_field :tag_list %>-->
+            </div>
 
             <div class="form-actions">
               <button name="commit" type="submit" class="btn btn-primary btn-large">Submit</button>

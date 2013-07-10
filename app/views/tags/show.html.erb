@@ -1,0 +1,10 @@
+<div class="container below-header">
+	<h2 class="featurette-heading">Clinics with status "<%= @tag.name %>"</h2>
+
+	<ul>
+		<% @tag.clinics.each do |clinic| %>
+			<li><%= link_to clinic.clinic_name, clinic_path(clinic) %></li>
+		<% end %>
+	</ul>
+
+	<br/>

@@ -3,6 +3,12 @@
 <div class="container below-header">
 <p class="flash"><%= flash.notice %></p>
 <h1><%= @clinic.clinic_name %></h1>
+<p>
+	Tags:
+	<% @clinic.tags.each do |tag| %>
+		<%= link_to tag.name, tag_path(tag) %>
+	<% end %>
+</p>
 
 <h3>Clinic Info</h3>
 <p><%= @clinic.address_line_1 %></p>

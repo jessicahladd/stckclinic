@@ -5,6 +5,8 @@ Stckclinic::Application.routes.draw do
     resources :comments
   end
 
+  resources :tags
+
   match "thank_you" => 'clinics#thank_you'
   match "admin" => 'clinics#admin'
   match "new_admin" => 'clinics#new_admin'
