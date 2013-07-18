@@ -1,4 +1,6 @@
 class ClinicsController < ApplicationController
+	before_filter :require_login, except: [:new, :create, :index, :thank_you]
+
 	def admin
 		@clinics = Clinic.all
 	end

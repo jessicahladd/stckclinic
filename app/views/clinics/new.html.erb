@@ -295,6 +295,20 @@
                 </label>
               </div>
             </div>
+
+            <% if logged_in? %>
+              <div class="control-group">
+                <%= label_tag(:tag_list, "Status", class: "control-label") %>
+                <div class="controls"> 
+                  <select class="span4" name="clinic[tag_list]" id="clinic_tag_list">
+                    <% Tag.all.each do |tag| %>
+                      <option value="<%= tag.name %>"><%= tag.name %></option>
+                    <% end %>
+                  </select>
+                </div>
+                <!--<%= f.text_field :tag_list %>-->
+              </div>
+            <% end %>
           			
           	<div class="form-actions">
             <%= submit_tag("Submit", class:"btn btn-primary btn-large") %>

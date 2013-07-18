@@ -1,6 +1,15 @@
 class UsernamesController < ApplicationController
   # GET /usernames
   # GET /usernames.json
+  before_filter :zero_users_or_authenticated, only: [:new, :create, :index, :show, :destroy]
+
+  def zero_users_or_authenticated
+    unless Username.count == 0 || current_user
+      redirect_to root_path
+      return false
+    end
+  end
+
   def index
     @usernames = Username.all
 
