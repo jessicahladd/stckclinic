@@ -1,0 +1,17 @@
+<div class="container below-header">
+	<br/>
+      <h2 class="featurette-heading">All tags</h2>
+      <div class="featurette">
+          <h3>All Tags</h3>
+          <ul id="clinics">
+            <% @tags.each do |tag| %>
+              <li>
+                <%= link_to tag.name, tag_path(tag), class: ''%>
+              </li>
+            <% end %>
+          </ul>
+          <br/>
+          <br/>
+          <%= link_to "<< Back to Clinic List", admin_path %>
+        </div>
+<hr class="featurette-divider">        

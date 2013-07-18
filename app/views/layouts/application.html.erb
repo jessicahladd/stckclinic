@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    "bootstrap_responsive", :media => "all" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
   <!--[if IE 7]>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome-ie7.min.css">
@@ -18,8 +19,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="STCK Clinic is a website, developed by Sexual Health Innovations, that allows clinics to sign up for free promotional material for So They Can Know, a free STD partner notification website.">
+  <meta name="author" content="Sexual Health Innovations, with mad props to Twitter Bootstrap"> 
 </head>
 <body>
 
@@ -44,6 +45,13 @@
                 <li><a href="../clinics.html#how">How it works</a></li>
                 <li><a href="../clinics.html#about">About us</a></li>
                 <li><%= link_to "Sign Up", new_clinic_path, class: "" %></li>
+                <li class="">
+                  <% if logged_in? %>
+                    <%= "Logged in as #{current_user.username}" %>
+                  <% else %>
+                    <a class="pull-right">Logged out</a>
+                  <% end %>
+                </li>
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->

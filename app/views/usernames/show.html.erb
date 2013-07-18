@@ -1,0 +1,17 @@
+<div class="container below-header">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @username.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @username.email %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_username_path(@username) %> |
+<%= link_to 'Back', usernames_path %>

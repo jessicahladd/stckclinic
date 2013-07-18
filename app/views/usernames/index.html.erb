@@ -1,0 +1,26 @@
+<div class="container below-header">
+<h1>Listing Users</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @usernames.each do |username| %>
+  <tr>
+    <td><%= username.username %></td>
+    <td><%= username.email %></td>
+    <td><%= link_to 'Show', username %></td>
+    <td><%= link_to 'Edit', edit_username_path(username) %></td>
+    <td><%= link_to 'Destroy', username, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_username_path %>

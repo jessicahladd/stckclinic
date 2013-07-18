@@ -1,4 +1,7 @@
 Stckclinic::Application.routes.draw do
+  resources :user_sessions
+
+
   root :to => 'clinics#index'
 
   resources :clinics do
@@ -10,6 +13,14 @@ Stckclinic::Application.routes.draw do
   match "thank_you" => 'clinics#thank_you'
   match "admin" => 'clinics#admin'
   match "new_admin" => 'clinics#new_admin'
+
+  resources :usernames
+
+  resources :user_sessions, only: [ :new, :create, :destroy ]
+
+  match 'login' => 'user_sessions#new'
+  match 'logout' => 'user_sessions#destroy'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
