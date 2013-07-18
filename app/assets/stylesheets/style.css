@@ -57,7 +57,6 @@
     }
 
 
-
     /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
@@ -136,6 +135,13 @@
     #how h2, #how h3, #how h4, #how .span3, #how p.lead, #team {
       text-align: center;
     }
+    #team img {
+      border-radius: 5px 5px 5px 5px;
+      width: 140px;
+      height: 140px;
+      margin-top: 25px;
+    }
+
     .icon_div {
       width: 140px;
       height: 105px;

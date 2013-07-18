@@ -44,14 +44,23 @@
                 <li><a href="../clinics.html#how">How it works</a></li>
                 <li><a href="../clinics.html#about">About us</a></li>
                 <li><%= link_to "Sign Up", new_clinic_path, class: "" %></li>
-                <li class="">
+                <!--<li class="login">
                   <% if logged_in? %>
                     <%= "Logged in as #{current_user.username}" %>
-                    <%= link_to "(logout)", logout_path %>
+                    <%= link_to "(logout)", logout_path, class: "" %>
                   <% else %>
-                    <%= link_to "Login", login_path %>
+                    <%= link_to "Login", login_path, class: "" %>
+                  <% end %>
+                </li>-->
+                <li class="login">
+                  <% if logged_in? %>
+                    <a><%= "Logged in as #{current_user.username}" %></a></li>
+                    <li>
+                    <%= link_to "(logout)", logout_path, class: "" %>
+                  <% else %>
                   <% end %>
                 </li>
+
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
