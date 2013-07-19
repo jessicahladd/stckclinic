@@ -54,7 +54,9 @@
                 </li>-->
                 <li class="login">
                   <% if logged_in? %>
-                    <a><%= "Logged in as #{current_user.username}" %></a></li>
+                    <%= link_to "All Clinics", admin_path, class: "" %></li>
+                    <li><%= link_to "All Users", usernames_path, class: "" %></li>
+                    <li><a><%= "Logged in as #{current_user.username}" %></a></li>
                     <li>
                     <%= link_to "(logout)", logout_path, class: "" %>
                   <% else %>

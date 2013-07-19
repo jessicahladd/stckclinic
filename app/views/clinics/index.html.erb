@@ -104,32 +104,47 @@
           <h2 class="featurette-heading">About us. <span class="muted">We're Sexual Health Innovations.</span></h2>
           <p class="lead"><a href="http://www.sexualhealthinnovations.org" target="_blank">Sexual Health Innovations</a> is a non-profit organization dedicated to using the power of technology to improve sexual health and well-being in the United States. We created <a href="https://www.sotheycanknow.org" target="_blank">So They Can Know</a> in an attempt to increase rates of STD partner notification, and we created this website to help us evaluate whether or not So They Can Know works.</p>
 
-          <div class="row" id="team">
-            <div class="span4">
+          <div class="row accordian" id="team">
+            <div class="span4 accordian-group">
               <%= image_tag("jess.png", :alt => "Jessica Ladd") %>
               <h3>Jess Ladd</h3>
               <p>Executive Director</p>
-              <button class="btn" id="jess_btn">More about Jess</button>
-              <div id="jess" class="more_about" style="display: none;">
-                Jess dedicated her life to sexual health at age 17. Since then, she's taught sex education, advocated for sexual health on the Hill, worked in the White House Office of National HIV AIDS Policy, received her Masters in Public Health from Johns Hopkins, and founded The Social Innovation Lab and Sexual Health Innovations. She's spoken at multiple TEDx events, and was named a "Fearless Changemaker" by the Case Foundation.
+              <div class="accordian-heading">
+                <a class="btn accordian-toggle" data-toggle="collapse" data-parent="#team" href="#collapseJess">More about Jess</a>
+              </div>
+              <div id="collapseJess" class="accordian-body collapse">
+                <div class="accordian-inner">
+                  <br/>
+                  Jess started working in sexual health at age 17. Since then, she's taught sex education, advocated for sexual health in DC on the Hill, worked in the White House Office of National HIV AIDS Policy, and founded The Social Innovation Lab and Sexual Health Innovations. She's spoken at multiple TEDx events, and was named a "Fearless Changemaker" by the Case Foundation. Jess received her MPH from the Johns Hopkins Bloomberg School of Public Health in May of 2011 and her B.A. in Human Sexuality/Public Policy from Pomona College in 2008.
+                </div>
               </div>
             </div>
-            <div class="span4">
+            <div class="span4 accordian-group">
               <%= image_tag("jenny.png", :alt => "Jenny McManus") %>
               <h3>Jenny McManus</h3>
               <p>Director of Operations</p>
-              <button class="btn">More about Jenny</button>
-              <div id="jenny" class="more_about" style="display: none;">
-                Jenny is awesome.
+              <div class="accordian-heading">
+                <a class="btn accordian-toggle" data-toggle="collapse" data-parent="#team" href="#collapseJenny">More about Jenny</a>
+              </div>
+              <div id="collapseJenny" class="accordian-body collapse">
+                <div class="accordian-inner">
+                  <br/>
+                  Prior to joining Sexual Health Innovations, Jenny worked as Residential Tutor Counselor for Upward Bound and as an after-school tutor for high school students in Providence, RI. She first got involved in the world of sexual health while assisting in clinical HIV research and patient education at Brown University. From 2009 to 2011 she was a member of the Aaron Diamond AIDS Research Center (ADARC) Vaccine Team, researching HIV and malaria vaccine candidates. Jenny received her MPH from the Johns Hopkins Bloomberg School of Public Health in May of 2012 and her Sc.B. in Human Biology from Brown University in 2009.
+                </div>
               </div>
             </div>
             <div class="span4">
               <%= image_tag("charlotte.png", :alt => "Charlotte Gaydos") %>
               <h3>Charlotte Gaydos</h3>
               <p>Chair of the Board</p>
-              <button class="btn">More about Charlotte</button>
-              <div id="charlotte" class="more_about" style="display: none;">
-                Charlotte is the Chair of the Board of Sexual Health Innovations and a renowed researcher in sexually transmitted infections. She is a professor at the Johns Hopkins School of Medicine.
+              <div class="accordian-heading">
+                <a class="btn accordian-toggle" data-toggle="collapse" data-parent="#team" href="#collapseCharlotte">More about Charlotte</a>
+              </div>
+              <div id="collapseCharlotte" class="accordian-body collapse">
+                <div class="accordian-inner">
+                  <br/>
+                  Charlotte is the Chair of the Board of Sexual Health Innovations and a renowed researcher in sexually transmitted infections (STIs). She is a professor at the Johns Hopkins School of Medicine. Charlotte also founded I Want The Kit, a website that allows people to order home STI testing kits. She is the Director of the International Sexually Transmitted Diseases Research Laboratory. She received her B.S. in medical technology and her M.S. in medical microbiology from West Virginia University. Her M.P.H. and Dr.P.H. in Infectious Diseases and Immunology were received from Johns Hopkins University School of Hygiene and Public Health. Charlotte has authored 17 book chapters, over 230 research articles, and over 400 research abstracts and oral presentations.
+                </div>
               </div>
             </div>
           </div>
